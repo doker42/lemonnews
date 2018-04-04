@@ -32,7 +32,7 @@ class FormInputComment extends React.Component{
         const user_id = this.props.user_id
       
         // axios.post('http://localhost:3030/posts/', { title, url, text })
-        axios.post('http://lemonnews.example/addComment/', { username, text, article_id, user_id })
+        axios.post('http://api.lemonnews.example/addComment/', { username, text, article_id, user_id })
           .then(res => {
             console.log(res);
             console.log(res.data);

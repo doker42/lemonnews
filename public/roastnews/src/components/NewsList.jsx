@@ -11,7 +11,7 @@ class NewsList extends React.Component{
   }
 
   componentDidMount() {
-    axios.get('http://lemonnews.example/getNews/')
+    axios.get('http://api.lemonnews.example/getNews/')
     // axios.get('http://lemonnews.zzz.com.ua/public/getNews')
     
       .then(res => {
