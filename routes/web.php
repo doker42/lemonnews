@@ -28,7 +28,11 @@ Route::group(['middleware'=> ['cors','web']], function () {
 
     Route::get('/getComments', ['uses' => "CommentController@getComments", 'as' => 'getComments']);
 
+    Route::get('/getSubComments', ['uses' => "CommentController@getSubComments", 'as' => 'getSubComments']);
+
     Route::match(['post', 'get'],'/addComment', ['uses' => "CommentController@addComment", 'as' => 'addComment']);
+
+//    Route::match(['post', 'get'],'/addSubComment', ['uses' => "CommentController@addSubComment", 'as' => 'addSubComment']);
 
 });
 

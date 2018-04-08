@@ -29,8 +29,36 @@ class CommentController extends Controller
 
         $comments = Comment::where('article_id', '=', $article_id)->get();
 
+        foreach($comments as $comment){
+            $comment->count = Comment::where('comment_id', '=', $comment->id)->count();
+        }
+
         return $comments;
     }
 
+//    public function addSubComment(Request $request){
+//
+//        $input = $request->except('_token');
+//
+//        $comment = new Comment();
+//
+//        $comment->fill($input);
+//
+//        if ($comment->save()) {
+//
+//            $message = "SubComment was saved!";
+//
+//            return $message;
+//        }
+//    }
+
+    public function getSubComments(Request $request){
+
+        $comment_id = $request->id;
+
+        $comments = Comment::where('comment_id', '=', $comment_id)->get();
+
+        return $comments;
+    }
 
 }
