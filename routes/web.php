@@ -33,3 +33,9 @@ Route::group(['middleware'=> ['cors','web']], function () {
 
 });
 
+
+Route::options('{any}', ['middleware' => ['cors'], function () {
+
+    return response(['status' => 'success']);
+
+}])->where('any', '.*');
