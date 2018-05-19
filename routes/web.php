@@ -16,13 +16,10 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware'=> ['cors','web']], function () {
-//Route::group(['middleware'=> 'cors'], function () {
 
     Route::match(['post', 'get'],'/addNews',    ['uses' => "NewsController@addNews", 'as' => 'addNews']);
 
     Route::match(['post', 'get'], '/addEvent',    ['uses' => "EventsController@addEvent", 'as' => 'addEvent']);
-
-//    Route::get('/getNews', ['uses' => "NewsController@getNews", 'as' => 'getNews']);
 
     Route::get('/getNews', "NewsController@getNews");
 

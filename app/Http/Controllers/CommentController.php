@@ -36,21 +36,6 @@ class CommentController extends Controller
         return $comments;
     }
 
-//    public function addSubComment(Request $request){
-//
-//        $input = $request->except('_token');
-//
-//        $comment = new Comment();
-//
-//        $comment->fill($input);
-//
-//        if ($comment->save()) {
-//
-//            $message = "SubComment was saved!";
-//
-//            return $message;
-//        }
-//    }
 
     public function getSubComments(Request $request){
 

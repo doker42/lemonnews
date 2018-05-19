@@ -10,9 +10,9 @@ class NewsController extends Controller
 {
     public function addNews(Request $request){
 
-//        dd($request);
-
         $input = $request->except('_token');
+
+        var_dump($input);
 
         $new_item = new News();
 
